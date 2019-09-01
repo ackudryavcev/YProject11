@@ -1,0 +1,47 @@
+{
+  "name": "yandex",
+  "version": "0.0.1",
+  "homepage": "https://ackudryavcev.github.io/project11.github.io/",
+  "description": "Яндекс практикум. Проектная работа 9. Интерактивная страница с загрузкой/выгрузкой данных на сервер. ============================================================= Блок обучения JavaScript на Яндекс Практикуме. --- Актуальная версия проекта - v.0.0.1 --- Описание: В проекте можно добавлять/удалять карточки городов, менять имя пользователя, его профессию и его аватар, ставить лайки и видеть лайки других пользователей. При заполнении форм добавления/изменения поля валидируются. Все данные подгружаются с сервера, при изменении и добавлении все данные сохраняются на сервере. --- Проект - домашнее задание в программе обучения Яндекс.Практикума. --- В проекте использовались: CSS, HTML, JavaScript --- Проект можно посмотреть на любом современном браузере. Распаковать и запустить index.html --- Никакие библиотеки не были задействованы. --- Планов по развитию проекта нет. ---",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open --watch"
+  },
+  "author": "Alexey Kudryavcev",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "file-loader": "^4.2.0",
+    "gh-pages": "~2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^5.0.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
+    "webpack-md5-hash": "0.0.6"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ackudryavcev/YProject11.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ackudryavcev/YProject11/issues"
+  }
+}
