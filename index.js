@@ -4,6 +4,7 @@ const FormEdit = document.forms.edit;
 const FormNew = document.forms.new;
 const FormAvatar = document.forms.avatar;
 if (NODE_ENV === 'production') {
+   // Вынести в отдельный конфигурационный файл
   url = 'https://praktikum.tk';
 } else {
   url = 'http://praktikum.tk';
@@ -16,6 +17,7 @@ import {validate,validateButton} from './blocks/popup/__form/form'
 const api = new Api({
   baseUrl: `${url}/cohort1/cards`,
   headers: {
+    // Ключ авторизации надо вынести отдельно
     authorization: '4cd1af71-d8c1-4879-9c1f-536369240472'
   }
 });
@@ -31,6 +33,8 @@ const apiProfile = new Api({
 apiProfile.getLoadProfile();
 // Слушатель страницы
 rootDoc.addEventListener('click', function (event) {
+  // лучше вынести в отдельгую функцию 
+
   const popup = new Popup(document.querySelector('.popup-add'));
   const popupEdit = new Popup(document.querySelector('.popup-edit'), FormEdit.elements.name, FormEdit.elements.about);
   const popupImage = new Popup(document.querySelector('.popup-img'), '', '', event.target.style.backgroundImage);
@@ -77,6 +81,7 @@ document.forms.avatar.addEventListener('submit', editAvatar);
 // Валидация форм
 // Форма редактировать профиль
 FormEdit.addEventListener('input', function () {
+  // лучше вынести в отдельгую функцию 
   const ButtonEdit = FormEdit.elements.button;
   const Name = FormEdit.elements.name;
   const About = FormEdit.elements.about;
@@ -88,6 +93,7 @@ FormEdit.addEventListener('input', function () {
 });
 // Форма добавления карточки
 FormNew.addEventListener('input', function () {
+  // лучше вынести в отдельгую функцию 
   const ButtonEdit = FormNew.elements.button;
   const Name = FormNew.elements.name;
   const Link = FormNew.elements.link;
@@ -99,6 +105,7 @@ FormNew.addEventListener('input', function () {
 });
 // Форма добавления карточки
 FormAvatar.addEventListener('input', function () {
+  // лучше вынести в отдельгую функцию 
   const ButtonEdit = FormAvatar.elements.button;
   const Link = FormAvatar.elements.link;
   const LinkSpan = document.querySelector(".popup__link_error_avatar");
@@ -106,3 +113,19 @@ FormAvatar.addEventListener('input', function () {
   validateButton(Link, Link, ButtonEdit);
 });
 import "./style.css";
+
+
+/**
+ * Хороший проект, видно что стараетесь. Очень аккуратный проект, с такими очень приятно работать ;)
+ * Развернул у себя проект, но карточки(добавление не заработали)
+ * Редактирование профиля тоже не заработали.
+ * Лайки не добавляются ;(? Зато отображаются )
+ * 
+ * Разверните проект согласно брифу чтоб он открывался  по адресу: https://имя.github.io/название_репозитория/
+ * README.md должно быть рассписано как запустить проект, пошагово
+ * 
+ * index.php необходимо разбить на класс или классы, а все файлы с классами вынести в отдельную папку (это для того чтобы было проще орентироваться по проекты.)
+ * js в одном папке css в другой папке
+ * В gitignore необходимо добавить папки которые не нужны проекты, "dist"
+ * 
+ */
