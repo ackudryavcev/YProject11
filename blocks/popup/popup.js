@@ -1,5 +1,7 @@
+import {key, url} from "../configuration/configuration"
 import {validate, validateButton, loading} from './__form/form'
 import {Api} from '../api/api'
+import {FormNew, FormEdit, FormAvatar} from "../configuration/configuration"
 class Popup {
     constructor(container, name, about, image, avatar) {
       this.container = container;
@@ -45,7 +47,7 @@ function editProfile(event) {
     const apiProfile = new Api({
       baseUrl: `${url}/cohort1/users/me`,
       headers: {
-        authorization: '4cd1af71-d8c1-4879-9c1f-536369240472',
+        authorization: key,
         'Content-Type': 'application/json'
       },
       method: 'PATCH',
@@ -67,7 +69,7 @@ function editAvatar(event) {
     const apiAvatar = new Api({
       baseUrl: `${url}/cohort1/users/me/avatar`,
       headers: {
-        authorization: '4cd1af71-d8c1-4879-9c1f-536369240472',
+        authorization: key,
         'Content-Type': 'application/json'
       },
       method: 'PATCH',

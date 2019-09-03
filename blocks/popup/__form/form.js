@@ -22,4 +22,14 @@ function validate(input, span) {
     }
     else { button.textContent = text }
   }
-  export {validate, validateButton, loading}
+  function listenerForm(ButtonEdit, Name, About, NameSpan, AboutSpan){
+    validate(Name, NameSpan);
+    if (About === 'no') {validateButton(Name, Name, ButtonEdit);
+    console.log('hfhhdhdhhdhhdh');
+    }
+    else{
+    validate(About, AboutSpan);
+    validateButton(Name, About, ButtonEdit);
+  }
+  }
+  export {validate, validateButton, loading, listenerForm}

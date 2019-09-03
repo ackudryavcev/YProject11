@@ -1,3 +1,4 @@
+import {key, url} from "../configuration/configuration"
 import {Api} from '../api/api'
 import {loading} from '../popup/__form/form'
 class Card {
@@ -37,9 +38,9 @@ class Card {
     // Лайк карточки
     like(id, span) {
       const apiCard = new Api({
-        baseUrl: `http://${url}/cohort1/cards/like/${id}`,
+        baseUrl: `${url}/cohort1/cards/like/${id}`,
         headers: {
-          authorization: '4cd1af71-d8c1-4879-9c1f-536369240472',
+          authorization: key,
           'Content-Type': 'application/json'
         }
       });
@@ -57,9 +58,9 @@ class Card {
     // Удаление карточки
     remove(id) {
       const apiCard = new Api({
-        baseUrl: `http://${url}/cohort1/cards/${id}`,
+        baseUrl: `${url}/cohort1/cards/${id}`,
         headers: {
-          authorization: '4cd1af71-d8c1-4879-9c1f-536369240472',
+          authorization: key,
           'Content-Type': 'application/json'
         },
         method: 'DELETE'
@@ -71,6 +72,7 @@ class Card {
   }
   // Создание новой карточки
 function newCard(event) {
+  console.log('newcard');
     const form = document.forms.new;
     const name = form.elements.name.value;
     const link = form.elements.link.value;
@@ -81,7 +83,7 @@ function newCard(event) {
       const apiCard = new Api({
         baseUrl: `${url}/cohort1/cards`,
         headers: {
-          authorization: '4cd1af71-d8c1-4879-9c1f-536369240472',
+          authorization: key,
           'Content-Type': 'application/json'
         },
         method: 'POST',

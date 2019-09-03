@@ -1,5 +1,6 @@
 import {CardList} from '../places-list/places-list'
 import {loading} from '../popup/__form/form'
+import {Popup} from '../popup/popup';
 let cardlist;
 // класс запросов
 class Api {
@@ -26,9 +27,6 @@ class Api {
         .catch((err) => {
           console.log(`ошибка - ${err}`);
         });
-      /* Отлично, здесь все выполняется корректно.
-      *
-      * */
     }
     // загрузка Профиля
     getLoadProfile() {
