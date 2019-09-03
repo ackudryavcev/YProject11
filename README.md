@@ -10,7 +10,9 @@
 ---
 В проекте использовались: CSS, HTML, JavaScript
 ---
-Проект можно посмотреть на любом современном браузере. Распаковать и запустить index.html
+Проект можно посмотреть по ссылке [https://ackudryavcev.github.io/YProject11.github.io/dist/](https://ackudryavcev.github.io/YProject11.github.io/dist/)
+---
+Так же можно распаковать папку dist  у себя на компьютере и запустить index.html
 ---
 Никакие библиотеки не были задействованы.
 ---
